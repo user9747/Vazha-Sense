@@ -1,0 +1,91 @@
+{
+    "scopeName": "source.vazha",
+    "patterns": [
+        {
+            "include": "#expression"
+        }
+    ],
+    "repository": {
+        "expression": {
+            "patterns": [
+                {
+                    "begin": "(^[ \\t]+)?(?=#)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.whitespace.comment.leading.vazha"
+                        }
+                    },
+                    "end": "(?!\\G)",
+                    "patterns": [
+                        {
+                            "begin": "#",
+                            "beginCaptures": {
+                                "0": {
+                                    "name": "punctuation.definition.comment.vazha"
+                                }
+                            },
+                            "end": "\\n",
+                            "name": "comment.line.number-sign.vazha"
+                        }
+                    ]
+                },
+                {
+                    "match": "\\b(?i:(0x\\h*)L)",
+                    "name": "constant.numeric.integer.long.hexadecimal.vazha"
+                },
+                {
+                    "match": "\\b(?i:(0x\\h*))",
+                    "name": "constant.numeric.integer.hexadecimal.vazha"
+                },
+                {
+                    "match": "\\b(?i:(0o?[0-7]+)L)",
+                    "name": "constant.numeric.integer.long.octal.vazha"
+                },
+                {
+                    "match": "\\b(?i:(0o?[0-7]+))",
+                    "name": "constant.numeric.integer.octal.vazha"
+                },
+                {
+                    "match": "\\b(?i:(0b[01]+)L)",
+                    "name": "constant.numeric.integer.long.binary.vazha"
+                },
+                {
+                    "match": "\\b(?i:(0b[01]+))",
+                    "name": "constant.numeric.integer.binary.vazha"
+                },
+                {
+                    "match": "\\b(?i:(((\\d+(\\.(?=[^a-zA-Z_])\\d*)?|(?<=[^0-9a-zA-Z_])\\.\\d+)(e[\\-\\+]?\\d+)?))J)",
+                    "name": "constant.numeric.complex.vazha"
+                },
+                {
+                    "match": "\\b(?i:(\\d+\\.\\d*(e[\\-\\+]?\\d+)?))(?=[^a-zA-Z_])",
+                    "name": "constant.numeric.float.vazha"
+                },
+                {
+                    "match": "(?<=[^0-9a-zA-Z_])(?i:(\\.\\d+(e[\\-\\+]?\\d+)?))",
+                    "name": "constant.numeric.float.vazha"
+                },
+                {
+                    "match": "\\b(?i:(\\d+e[\\-\\+]?\\d+))",
+                    "name": "constant.numeric.float.vazha"
+                },
+                {
+                    "match": "\\b(?i:([1-9]+[0-9]*|0)L)",
+                    "name": "constant.numeric.integer.long.decimal.vazha"
+                },
+                {
+                    "match": "\\b([1-9]+[0-9]*|0)",
+                    "name": "constant.numeric.integer.decimal.vazha"
+                },
+                {
+                    "match": "\\b(ഉം|പോലെ|ഉറപ്പിക്കുക|അസിൻക്|കാത്തിരിക്കുക|പൊട്ടിക്കുക|ക്ലാസ്സ്|തുടരുക|നിര്‍വചനം|കളയുക|അല്ലെങ്കിലെങ്കില്‍|അല്ലെങ്കില്‍|അസാധാരണം|അവസാനമായി|കറങ്ങട്ടെ|ഇവിടുന്ന്|ആഗോള|എങ്കില്‍|ഇറക്കുമതി|ൽ|ആണ്|ലാംഡ|നാടനല്ലാത്ത|അല്ല|അഥവാ|കടന്ന്പോ|ഉയര്ത്തുക|മടക്കം|ശ്രമിച്ചുനോക്കൂ|ഇതുവരെ|കൂടെ|ഫലം)\\b",
+                    "name": "keyword.control.keywords.vazha"
+                },
+                {
+                    "match": "\\b(എല്ലിപ്സിസ്|തെറ്റായ|ഒന്നുമില്ല|നടപ്പിലാക്കാത്ത|ശരി|__നിർമാണ_ക്ലാസ്__|__പ്രമാണം__|__ഇറക്കുമതി__|__ലോഡർ__|__പേര്__|__കെട്ട്__|__വിവരണം__|എബിഎസ്|എല്ലാം|എന്തെങ്കിലും|ആസ്കി|ആകുന്നു|ബൂള്|നിരതനസ്തലം|ബ്യ്തെഅര്രയ്|ബൈറ്റുകൾ|വിളികാനപറ്റന|അക്ഷരം|ക്ലാസ്_മെഥെട്|കംപൈല്|സങ്കീർണ്ണമായ|പകർപ്പവകാശ|ക്രെഡിറ്റുകൾ|ഗുണം_ഒഴിവാക്കുക|നിഘണ്ഡു|നാമാവലിപ്പട്ടിക|ദിവ്മൊദ്|നിരത്തുക|വില|ചെയ്യൂ|പുറത്ത്|അരിപ്പ|ഒഴുകുക|ഫോർമാറ്റ്|ഉറഞ്ഞഗണം|ഗെതത്ത്ര്|ആഗോള|ഹ്സത്ത്ര്|ഹാഷ്|സഹായിക്കൂ|ഹെക്സ്|ഐഡി|ഇൻപുട്ട്|പൂർണ്ണസംഖ്യ|സന്ദര്ഭമാണൊ|ഉപക്ലാസ്സണൊ|പ്രക്രിയ|നീളം|ലൈസൻസ്|പട്ടിക|പ്രദേശവാസികൾ|ഭൂപടം|പരമാവധി|മെമൊര്യ്വിഎവ്|കുറഞ്ഞ|അടുത്തത്|വസ്തു|ഒകട|തുറക്കുക|ക്രമം|മൊളില്|അച്ചടിക്കുക|സ്വഭാവം|ഉപേക്ഷിക്കു|ശ്രേണി|ചിത്രീകരിക്കുക|വിപരീത|വട്ടം|ഗണം|സെതത്ത്ര്|പൂള്|അടുക്കിയ|നിശ്ചലമെഥൊദ്|നാട|മൊത്തം|സൂപ്പർ|നിര|തരം|വിവിധം|പൂട്ടു)\\b",
+                    "name": "keyword.other.vazha"
+                }
+            ]
+        }
+    }
+}
